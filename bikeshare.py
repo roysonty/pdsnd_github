@@ -37,7 +37,7 @@ def get_filters():
             break
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input('One last thing. Could you type one of the week day you want to analyze? \n You can type \'all\' again to apply no day filter. \n(e.g. all, monday, sunday) \n> ').lower()
+        day = input('Could you type one of the week day you want to analyze? \n You can type \'all\' again to apply no day filter. \n(e.g. all, monday, sunday) \n> ').lower()
         if day not in DAYS:
             print("\nInvalid Answer\n")
             continue
