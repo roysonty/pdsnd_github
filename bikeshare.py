@@ -29,7 +29,7 @@ def get_filters():
             break
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
-        month = input('All right! now it\'s time to provide us a month name Which month? January, Feburary, March, April, May or June, All?').lower()
+        month = input(' Which month of January, Feburary, March, April, May or June, you would like to explore?').lower()
         if month not in MONTHS:
             print("\nInvalid Answer\n")
             continue
@@ -37,7 +37,7 @@ def get_filters():
             break
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input('One last thing. Could you type one of the week day you want to analyze? \n You can type \'all\' again to apply no day filter. \n(e.g. all, monday, sunday) \n> ').lower()
+        day = input('Could you type one of the week day you want to analyze? \n You can type \'all\' again to apply no day filter. \n(e.g. all, monday, sunday) \n> ').lower()
         if day not in DAYS:
             print("\nInvalid Answer\n")
             continue
@@ -81,7 +81,7 @@ def load_data(city, month, day):
 
     return df
 
- 
+
 
 
 def time_stats(df):
@@ -178,7 +178,7 @@ def user_stats_gender(df):
     # TO DO: Display earliest, most recent, and most common year of birth
 def user_stats_birth(df):
     """Displays statistics pn birth years of bikeshare users."""
-    
+
     print('\nCalculating User Stats...\n')
     start_time = time.time()
     if 'Birth Year' not in df:
@@ -187,7 +187,7 @@ def user_stats_birth(df):
         birth = df.groupby('Birth Year', as_index=False).count()
         print('Earliest year of birth was {}.'.format(int(birth['Birth Year'].min())))
         print('Most recent year of birth was {}.'.format(int(birth['Birth Year'].max())))
-        print('Most common year of birth year was {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))   
+        print('Most common year of birth year was {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -216,7 +216,7 @@ def display_data(df):
                 break
             else:
                 print('You did not enter a valid choice.')
-                return    
+                return
 
 
 def main():
